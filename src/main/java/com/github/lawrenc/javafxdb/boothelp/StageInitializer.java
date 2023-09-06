@@ -56,17 +56,17 @@ public class StageInitializer implements ApplicationListener<StageInitializer.St
 
             });
             stage.heightProperty().addListener((observableValue, oldValue, newValue) -> {
-                if (Double.isNaN(oldValue.doubleValue())){
+                if (Double.isNaN(oldValue.doubleValue())) {
                     return;
                 }
-                TabPane tabPane =(TabPane)stage.getScene().getRoot();
-                double heightRatio=newValue.doubleValue()/oldValue.doubleValue();
-               Tab tab= tabPane.getTabs().get(1);
-                AnchorPane anchorPane= (AnchorPane) tab.getContent();
-              TableView tableView= (TableView) anchorPane.getChildren().get(0);
+                TabPane tabPane = (TabPane) stage.getScene().getRoot();
+                double heightRatio = newValue.doubleValue() / oldValue.doubleValue();
+                Tab tab = tabPane.getTabs().get(1);
+                AnchorPane anchorPane = (AnchorPane) tab.getContent();
+                TableView tableView = (TableView) anchorPane.getChildren().get(0);
 
 
-                tableView.setLayoutY(tableView.getLayoutY()*heightRatio);
+                tableView.setLayoutY(tableView.getLayoutY() * heightRatio);
             });
         } catch (Exception e) {
             log.error("start jfx fail,will close!", e);

@@ -6,6 +6,21 @@ spring:
     ansi:
       enabled: always
 
+# JDBC数据源配置
+  datasource:
+    driver-class-name: org.h2.Driver
+    # 使用混合模式，默认情况下，H2 只运行一个进程访问，true 表示可以多个进程可以访问同一个数据库
+    url: jdbc:h2:~/mp_test;AUTO_SERVER=TRUE
+    # 数据库不存在时会自动传教，初始账号密码可以自定义。
+    username: root
+    password: xxxxxx
+
+  # H2 Web 控制台配置，启用 h2 Console 控制台，并设置访问路径。
+  # 这样就能通过浏览器访问数据库了：http://localhost:8080/h2_console
+  h2:
+    console:
+      enabled: true
+      path: /h2_console
 jfx:
   stage-title: FXTools
   openBrowser: true

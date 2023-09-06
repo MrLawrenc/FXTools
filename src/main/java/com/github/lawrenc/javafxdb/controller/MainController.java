@@ -21,7 +21,6 @@ import java.util.ResourceBundle;
 @Slf4j
 @Getter
 @Component
-
 public class MainController implements Initializable, DisposableBean {
 
     @FXML

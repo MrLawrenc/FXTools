@@ -3,6 +3,7 @@ package com.github.lawrenc.javafxdb;
 import com.TestA;
 import com.github.lawrenc.javafxdb.boothelp.JfxApplication;
 import javafx.application.Application;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
@@ -12,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * date  2021/12/21 22:42
  */
 @SpringBootApplication
+@MapperScan("com.github.lawrenc.javafxdb.mapper")
 public class JavaFXDBApplication {
 
     public static void main(String[] args) {
