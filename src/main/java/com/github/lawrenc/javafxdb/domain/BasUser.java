@@ -1,13 +1,11 @@
 package com.github.lawrenc.javafxdb.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
 
-@Setter
-@Getter
+@Data
 public class BasUser implements Serializable {
     private Long id;
     private String name;

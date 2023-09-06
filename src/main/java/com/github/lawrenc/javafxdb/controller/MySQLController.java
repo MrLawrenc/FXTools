@@ -65,9 +65,11 @@ public class MySQLController implements Initializable, DisposableBean {
         int port = Integer.parseInt(addrArray[1]);
         Assert.isTrue(port > 1000 && port < 20000, "addr should @");
         log.debug("username: {}, password: {}, addr: {}", usernameStr, passwordStr, addrStr);
-        BasUser basUser=   new BasUser();
+        BasUser basUser = new BasUser();
         basUser.setId(321321321312l);
         basUser.setName("dsadas");
         basUserMapper.insert(basUser);
+        BasUser user = basUserMapper.selectById(321321321312l);
+        System.out.println(user);
     }
 }
